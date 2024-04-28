@@ -9,11 +9,10 @@ pipeline {
         }
         stage('Deploy to XAMPP') {
             steps {
-                // Create the build directory if it doesn't exist
-                bat 'mkdir build'
-                
-                // Copy index.html to the XAMPP htdocs directory
-                bat 'copy /Y build\\index.html "C:\\xampp\\htdocs"'
+                // Copy hello.html
+                bat 'copy /Y hello.html "C:\\xampp\\htdocs"'
+                // Copy namaste.html
+                bat 'copy /Y namaste.html "C:\\xampp\\htdocs"'
             }
         }
     }
