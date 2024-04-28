@@ -9,7 +9,10 @@ pipeline {
         }
         stage('Deploy to XAMPP') {
             steps {
-                // Replace 'build/index.html' with the path to your HTML file relative to the Jenkins workspace
+                // Create the build directory if it doesn't exist
+                bat 'mkdir build'
+                
+                // Copy index.html to the XAMPP htdocs directory
                 bat 'copy /Y build\\index.html "C:\\xampp\\htdocs"'
             }
         }
